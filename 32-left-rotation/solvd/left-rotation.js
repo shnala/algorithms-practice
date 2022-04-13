@@ -5,6 +5,9 @@
 const arr = [1, 2, 3, 4, 5, 6];
 const positions = 2;
 
+//The 'shift' method handles all of the trouble of moving every piece of the array down by one index value, which was my initial hangup with this problem. Rather than writing the logic for moving each individual piece of the array, it is far easier to just use shift, since it deletes (and returns) the item at index[0], and 'shifts' everything else in the array down by one index value, such that index[1] is now index[0], index[2] is now index[1], so on so forth.
+
+//Since shift returns the element that was deleted, one can simply use the 'push' method to re-add it to the end of the array, which is where it belongs.
 const leftRotation = (arr, positions) => { 
     
     while (positions > 0) {
