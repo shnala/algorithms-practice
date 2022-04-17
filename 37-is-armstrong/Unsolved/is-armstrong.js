@@ -6,7 +6,9 @@
 // TODO: Complete the function below:
 
 var isArmstrong = function(num) {
+    // Converts the integer 'num' into an array so each digit can be iterated upon. Could also convert to a string (which is what I was trying to do but overthought it)
     const numSplit = (num + '').split('').map((digit) => { return Number(digit); });
+    console.log(numSplit);
 
     let sum = 0;
     let digits = numSplit.length;

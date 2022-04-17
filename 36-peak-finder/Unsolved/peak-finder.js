@@ -10,3 +10,18 @@ const peakFinder = function(nums) {
 };
 
 console.log(peakFinder(arr));
+
+// Alternative solution (doesn't work with negative values);
+
+// const peakFinder = (nums) => {
+//   let peak = 0;
+
+//   for (let i = 0; i < nums.length; i++) {
+//     const number = nums[i];
+//     peak = Math.max(peak, number);
+//   };
+
+//   return peak;
+// };
+
+// console.log(peakFinder(arr));
