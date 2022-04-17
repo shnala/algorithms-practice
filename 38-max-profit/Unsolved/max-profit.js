@@ -11,17 +11,18 @@ var arr = [1, 6, 7, 9];
 
 var maxProfit = function (prices) {
     let profit = 0;
-    let min;
-    let max;
+    let floor = Infinity;
 
     for (let i = 0; i < prices.length; i++) {
-        if (prices[i] > prices[i+1]) {
-            max = prices[i];
-        };
-        
+        const price = prices[i];
+        floor = Math.min(price, floor);
+        profit = Math.max(price - floor, profit);
+        console.log(floor);
+        console.log(profit);
     };
-    console.log(max);
+
     return profit;
 };
 
 console.log(maxProfit(arr));
+//done
