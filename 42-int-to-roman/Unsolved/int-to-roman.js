@@ -22,4 +22,4 @@ var intToRoman = function(num) {
 // var num = 5;
 var num = 2024;
 
-console.log(intToRoman(num))
+console.log(intToRoman(num));
