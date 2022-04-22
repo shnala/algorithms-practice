@@ -2,19 +2,22 @@
 // Return the new array
 // Solve without joining the digits array and modify the original array in place
 
+
+
+// IF the last digit is 9, then there will be overflow;
+// 9's will always become 0's. The tricky part is creating logic to adjust every other value in the array
+// IF 79, change 9 to 0, and 7 to 8.
+// Where digit[i] === 9, change digit[i-1] to digit[i-1]+=1 IF digit[i-1] !== 9
+// IF 99, change both 9's to 0.
+// Case will be slightly different if all integers are 9, meaning the length of the array will increase upon adding 1. Create an individual IF statement for this.
 var plusOne = function(digits) {
+    // Catch for empty array
     if (digits.length === 0) {
         digits[0] = 1;
         return digits;
     };
 
-    // IF the last digit is 9, then there will be overflow;
-    // 9's will always become 0's. The tricky part is creating logic to adjust every other value in the array
-    // IF 79, change 9 to 0, and 7 to 8.
-    // Where digit[i] === 9, change digit[i-1] to digit[i-1]+=1 IF digit[i-1] !== 9
-    // IF 99, change both 9's to 0.
-    // Case will be slightly different if all integers are 9, meaning the length of the array will increase upon adding 1. Create an individual IF statement for this.
-
+    // Check if array only contains 9's
     if ((new Set (digits)).size === 1 && digits.includes(9)) {
         console.log('This number only has 9s');
         for (let i = 0; i < digits.length; i++) {
@@ -26,10 +29,12 @@ var plusOne = function(digits) {
             };
         };
 
-        // Increases array length
+        // Increases array length to accomodate overflow
         digits[digits.length] = 0;
 
-    } else if (digits[digits.length-1] === 9) {
+    } 
+    // If last digit is 9, preceeding values will change as well
+    else if (digits[digits.length-1] === 9) {
         for (let i = 0; i < digits.length; i++) {
             if (digits[i] === 9) {
                 digits[i] = 0;
