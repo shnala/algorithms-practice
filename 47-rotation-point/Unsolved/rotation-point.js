@@ -2,6 +2,7 @@
 // define the middle as the final value of left (first value in the array) plust right (last value in the array) divided by two. Use 
 // compare the middle with the first value in the array, which we will call left
 // if left is less than (earlier in the alphabet) than middle, then this indicates the array is in order, at least with reference to these two indexes. Therefore the next value after the middle (middle + 1) should be checked. We will set (middle + 1) to be the new value for left, in order to bring us closer to the point of rotation.
+// NOTE: if left < middle, then it stands to reason that everything BETWEEN left and middle is also in order, since AFTER the point of rotation, everything will NOT be in order, but not BEFORE that point.
 // NOTE: changing the value for left will also change the value for middle, since middle is calculated based on left and right.
 // if the left value is greater than the middle (later in the alphabet), then this indicates the array is not in order. We cannot yet find where the point of rotation is, but this is a clue that the current middle occurs AFTER the point of rotation. Therefore, we should check every index PRIOR to middle. We will set the value of right to (middle -1) so we can get closer to the point of rotation, understanding that it occurs PRIOR to the middle.
 // NOTE: changing the value for right will also change the value for middle, since middle is calculated based on left and right.
