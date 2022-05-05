@@ -24,6 +24,9 @@ var isPalindrome = function (head) {
     let node = head;
     
       while(node !== null){
+          console.log(`String1: ${string1}`)
+          console.log(`String2: ${string2}`)
+          console.log(`node.val: ${node.val}`)
           string1 = `${string1}${node.val}`;
           string2 = `${node.val}${string2}`;
           node = node.next;
@@ -34,7 +37,7 @@ var isPalindrome = function (head) {
       return string1 === string2;
 };
 
-const arr = [1, 2, 2, 1];
+const arr = [1, 2];
 const head = new ListNode(arr);
 
 console.log(isPalindrome(head));
