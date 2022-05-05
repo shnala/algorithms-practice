@@ -54,6 +54,18 @@ class LinkedList {
         return this.head;
     }
 
+    // method for adding a new node to the list
+    add(element) {
+        let node = this.head
+        // while the NEXT node is not null, run this loop
+        while (node.next) {
+            node = node.next;
+        };
+
+        // at this point the loop has ended and we are positioned at the end of the linked list, just before null. We will set node.next (which is currently null) to be the new Node(element)
+        node.next = new Node(element);
+    };
+
 };
 
 const nodeA = new Node(1);
@@ -83,4 +95,23 @@ let list = new LinkedList(nodeA);
 // console.log(list.size());
 
 // console.log(list.getLast());
-console.log(list.getFirst());
+// console.log(list.getFirst());
+
+console.log(list.add(5));
+console.log(list.size());
+
+
+// Old add() method for reference. 
+    // method for adding a new node to the list
+    // add(element) {
+    //     let node = this.head
+    //     // while node is not null, run this loop
+    //     while (node) {
+    //         if (!node.next) {
+    //             node.next = new Node(element);
+    //         };
+
+    //         node = node.next;
+    //     }
+    //     return;
+    // }
