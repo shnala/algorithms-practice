@@ -10,11 +10,24 @@ class LinkedList {
     // head is initialized with a value of null until it is fed an argument
     constructor(head = null) {
         this.head = head;
+    };
 
-        // method for adding a new node to the end of the linked list
-        this.add = function(element) {
-            
-        }
+    // get for returning the number of nodes in the list; 
+    size() {
+        let count = 0;
+        let node = this.head;
+
+        // while node is not null, perform this loop:
+        while (node) {
+            count++;
+            node = node.next;
+        };
+
+        return count;
+    };
+    
+    clear() {
+        this.head = null;
     };
 
 };
@@ -34,3 +47,11 @@ console.log(list.head.next);
 
 // logs 3
 console.log(list.head.next.val);
+
+// logs 2
+console.log(list.size());
+
+list.clear();
+
+// logs 0 because occurs after list has been cleared
+console.log(list.size());
