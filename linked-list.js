@@ -66,6 +66,35 @@ class LinkedList {
         node.next = new Node(element);
     };
 
+    // method for removing a node from the end of the list
+    //TODO: need catch for when 'val' doesn't exist
+    remove(val) {
+        let node = this.head
+        let previousNode; 
+        // console.log(node.val);
+
+        if (node.val === val) {
+            // This is a catch for when the first value in the linked list is the value we want to remove. We will simply set the next node in the list to be the head instead. 
+            head = node.next;
+        } else {
+            //TODO: Explain how this works
+            // Perform this loop until we reach a node that matches the argument. Once we reach a point where node.val === val, previousNode will have a value representing the node just prior to node.val === val, which we will use below.
+            while (node.val !== val) {
+                previousNode = node;
+                node = node.next;
+            }
+            // console.log(previousNode.next.val);
+            console.log(node.val);
+
+            // Once we have reached this point, node.val === val. We will overrwrite the current node to be the value of the node just after it, effectively removing it from the linked list.
+            previousNode.next = node.next;
+
+            // This doesn't work but the line above does? Even though node and previousNode.next are equivalent. This line of code doesn't actually affect the linked list in any way.
+            // node = node.next;
+        }
+
+    }
+
 };
 
 const nodeA = new Node(1);
@@ -85,20 +114,15 @@ let list = new LinkedList(nodeA);
 // logs 3
 // console.log(list.head.next.val);
 
-// logs 2
+list.add(5);
+// list.add(7);
+// list.add(10);
+// list.add(11);
 // console.log(list.size());
 
-// empties the linked list
-// list.clear();
-
-// logs 0 because occurs after list has been cleared
+list.remove(3);
 // console.log(list.size());
-
-// console.log(list.getLast());
-// console.log(list.getFirst());
-
-console.log(list.add(5));
-console.log(list.size());
+console.log(list.head);
 
 
 // Old add() method for reference. 
