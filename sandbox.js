@@ -27,3 +27,6 @@ console.log(words[0] > words[1]);
 
 console.log(words[0] > words[4]);
 // Returns true; 'great' is greater than 'chosen' because 'c' is lower in the alphabet.
+
+console.log(Math.floor(121 % 10));
+console.log(Math.floor(1/10));
