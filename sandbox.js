@@ -35,3 +35,7 @@ const word = "flower";
 console.log(word.slice(0, 8));
 // if the end point of the slice method extends beyond the length of the word/array, it will just extend to the end of the word/array.
 console.log(word.length);
+
+const s = "()[]{}";
+console.log(s.pop());
+// array methods cannot be used on strings"
