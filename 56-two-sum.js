@@ -63,12 +63,12 @@ var twoSum = (nums, target) => {
 };
 
 
-const nums = [3, 5, 9, 12, 15];
-const target = 21;
+// const nums = [3, 5, 9, 12, 15];
+// const target = 21;
 // expect [2,3]
 
-// const nums = [3,3];
-// const target = 6;
+const nums = [3,3];
+const target = 6;
 // expect [0,1]
 
 console.log(twoSum(nums, target));
