@@ -72,4 +72,4 @@ var romanToInt = function(str) {
 const str = "III";
 console.log(romanToInt(str));
 
-//done 
+//done, faster than 5% and smaller than 6% of solutions
