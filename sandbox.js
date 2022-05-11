@@ -28,5 +28,10 @@ console.log(words[0] > words[1]);
 console.log(words[0] > words[4]);
 // Returns true; 'great' is greater than 'chosen' because 'c' is lower in the alphabet.
 
-console.log(Math.floor(121 % 10));
-console.log(Math.floor(1/10));
+// console.log(Math.floor(121 % 10));
+// console.log(Math.floor(1/10));
+
+const word = "flower";
+console.log(word.slice(0, 8));
+// if the end point of the slice method extends beyond the length of the word/array, it will just extend to the end of the word/array.
+console.log(word.length);
