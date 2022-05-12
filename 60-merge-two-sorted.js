@@ -84,4 +84,3 @@ const list2 = [1,3,4];
 // should return [1,1,2,3,4,4]
 
 console.log(mergeTwoLists(list1, list2));
-
