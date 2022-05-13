@@ -47,3 +47,4 @@ const bad = 4;
 // expected output: 4
 
 console.log(solution(n));
+// sick
