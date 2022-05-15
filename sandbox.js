@@ -36,6 +36,16 @@ console.log(word.slice(0, 8));
 // if the end point of the slice method extends beyond the length of the word/array, it will just extend to the end of the word/array.
 console.log(word.length);
 
-const s = "()[]{}";
-console.log(s.pop());
-// array methods cannot be used on strings"
+// const s = "()[]{}";
+// console.log(s.pop());
+// certain array methods cannot be used on strings"
+
+let a = "1010";
+let b = "1011";
+
+const aBin = `0b${a}`
+const bBin = `0b${b}`
+
+console.log(BigInt(aBin));
+const sum = BigInt(aBin) + BigInt(bBin);
+console.log(sum.toString(2));
