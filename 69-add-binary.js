@@ -15,8 +15,11 @@ const addBinary = (a, b) => {
             console.log('triggerd');
             idx--;
             continue;
-        } else if (numA[idx] )
-        return 
+        }
+        
+        while (numA[idx] === 1) {
+            
+        }
     };
 };
 
