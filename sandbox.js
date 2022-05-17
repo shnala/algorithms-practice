@@ -57,28 +57,48 @@
 // console.log(nums1);
 // just testing splice
 
-const test = (thing) => {
-    // NOTE: recursive() will not fire unless it is called. 
-    function recursive(y) {
-        // NOTE: this recursive function has no break, and will fire infinitely if one of the triggers below is uncommented.
-        console.log('Trigger 1');
-        // recursive(thing); 
-        // only 'Trigger 1' will be logged; 'Trigger 2' and 'Trigger 3' will not.
+// const test = (thing) => {
+//     // NOTE: recursive() will not fire unless it is called. 
+//     function recursive(y) {
+//         // NOTE: this recursive function has no break, and will fire infinitely if one of the triggers below is uncommented.
+//         console.log('Trigger 1');
+//         // recursive(thing); 
+//         // only 'Trigger 1' will be logged; 'Trigger 2' and 'Trigger 3' will not.
 
-        console.log('Trigger 2');
-        // recursive(thing); 
-        // 'Trigger 1' and 'Trigger 2' will be logged; 'Trigger 3' will not.
+//         console.log('Trigger 2');
+//         // recursive(thing); 
+//         // 'Trigger 1' and 'Trigger 2' will be logged; 'Trigger 3' will not.
 
-        console.log('Trigger 3');
+//         console.log('Trigger 3');
 
-        // This 'return' will never be reached
-        return;
-    };
-    // At this point, recursive() will fire a second time.
-    // If this line is commented out, recursive() will not fire, even when test() is called.
-    // recursive(thing);
-    console.log('Trigger 4');
-};
+//         // This 'return' will never be reached
+//         return;
+//     };
+//     // At this point, recursive() will fire a second time.
+//     // If this line is commented out, recursive() will not fire, even when test() is called.
+//     // recursive(thing);
+//     console.log('Trigger 4');
+// };
 
-const thing = [1,2,3];
-test(thing);
+// const thing = [1,2,3];
+// test(thing);
+
+// Testing static on Classes
+class ClassWithStaticMethod {
+    static staticProperty = 'someValue';
+    static staticMethod() {
+      return 'static method has been called.';
+    }
+    // TODO: Line below is the question; how exactly is it triggered? 
+    // ANSWER: it triggers every time sandbox.js is ran in the terminal. Hence 'initialization block called'
+    static {
+      console.log('Class static initialization block called');
+    }
+}
+  
+//   console.log(ClassWithStaticMethod.staticProperty);
+  // output: "someValue"
+//   console.log(ClassWithStaticMethod.staticMethod());
+  // output: "static method has been called."
+
+// const test = new ClassWithStaticMethod();
