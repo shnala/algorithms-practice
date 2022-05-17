@@ -11,7 +11,7 @@
  * @param {TreeNode} q
  * @return {boolean}
  */
-// return 'true' if both trees 'p' and 'q' have the same structure and node values. otherwise, return 'false
+// return 'true' if both trees 'p' and 'q' have the same structure and node values. otherwise, return 'false;
 // create a stack for tree 'p' and then compare the arrays
  var isSameTree = function(p, q) {
     const map = [];
@@ -26,3 +26,5 @@
     traverse(p);
     return map;
 };
+
+//wip (lol)
