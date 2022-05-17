@@ -20,12 +20,12 @@
 // Should print 'I' because H is offset by +1 in the caesar cipher
 // console.log(offsetChar);
 
-var words = ["great", "ostrich", "panther", "ruby", "chosen", "feathers"];
+// var words = ["great", "ostrich", "panther", "ruby", "chosen", "feathers"];
 
-console.log(words[0] > words[1]);
-// Returns false; 'great' is not greater than 'ostrich' because 'o' is higher in the alphabet
+// console.log(words[0] > words[1]);
+// // Returns false; 'great' is not greater than 'ostrich' because 'o' is higher in the alphabet
 
-console.log(words[0] > words[4]);
+// console.log(words[0] > words[4]);
 // Returns true; 'great' is greater than 'chosen' because 'c' is lower in the alphabet.
 
 // console.log(Math.floor(121 % 10));
@@ -50,9 +50,35 @@ console.log(words[0] > words[4]);
 // const sum = BigInt(aBin) + BigInt(bBin);
 // console.log(sum.toString(2));
 
-const nums1 = [1,2,3,0,0,0]
-const nums2 = [2,5,6]
+// const nums1 = [1,2,3,0,0,0]
+// const nums2 = [2,5,6]
 
-nums1.splice(1, 0, nums2[2]);
-console.log(nums1);
+// nums1.splice(1, 0, nums2[2]);
+// console.log(nums1);
 // just testing splice
+
+const test = (thing) => {
+    // NOTE: recursive() will not fire unless it is called. 
+    function recursive(y) {
+        // NOTE: this recursive function has no break, and will fire infinitely if one of the triggers below is uncommented.
+        console.log('Trigger 1');
+        // recursive(thing); 
+        // only 'Trigger 1' will be logged; 'Trigger 2' and 'Trigger 3' will not.
+
+        console.log('Trigger 2');
+        // recursive(thing); 
+        // 'Trigger 1' and 'Trigger 2' will be logged; 'Trigger 3' will not.
+
+        console.log('Trigger 3');
+
+        // This 'return' will never be reached
+        return;
+    };
+    // At this point, recursive() will fire a second time.
+    // If this line is commented out, recursive() will not fire, even when test() is called.
+    // recursive(thing);
+    console.log('Trigger 4');
+};
+
+const thing = [1,2,3];
+test(thing);
