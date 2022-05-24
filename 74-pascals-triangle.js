@@ -12,7 +12,7 @@
     // initialize triangle
     let triangle = [[1], [1,1]];
     let n = 3
-    let upperRow = triangle[n-1]
+    let upperRow = triangle[n-2]
 
     // need to push array of length 'n' to triangle; array should be [1, _, 1], whereby '_' is of value triangle[n-1][0] + triangle[n-1][1]
 
@@ -21,23 +21,27 @@
         let row = new Array(n)
 
         for (let i = 0; i < row.length; i++) {
-            const number = row[i];
-            if (i === 0 || i === (n - 1)) {
+            // const number = row[i];
+            if (i === 0 || i === (row.length - 1)) {
                 row[i] = 1;
             } else {
                 // starts filling indexes at index 1, therefor must add previous row of i -1 (which will always be 1) and the next number, which is just i
+                // [1, _, _, 1]
+                // [1, ()]
                 row[i] = upperRow[i - 1] + upperRow[i]
             }
         }
+        console.log('New Row');
+        n++;
         triangle.push(row);
     }
 
     return triangle;
 };
 
-const numRows = 3;
+const numRows = 4;
 
 // const numRows = 5;
 // should output [[1],[1,1],[1,2,1],[1,3,3,1],[1,4,6,4,1]];
 
-console.log(generate(5));
+console.log(generate(numRows));
