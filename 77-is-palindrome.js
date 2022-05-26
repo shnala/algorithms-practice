@@ -27,7 +27,7 @@ const s = "A man, a plan, a canal: Panama";
 // const s = " "
 // should return true
 
-// const s = "race a car"
+// const s = "race a car" 
 // should return false
 
 console.log(isPalindrome(s));
