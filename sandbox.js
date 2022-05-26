@@ -57,32 +57,32 @@
 // console.log(nums1);
 // just testing splice
 
-const test = (thing) => {
-    // NOTE: recursive() will not fire unless it is called. 
-    function recursive(y) {
-        // NOTE: this recursive function has no break, and will fire infinitely if one of the triggers below is uncommented.
-        console.log('Trigger 1');
-        // recursive(thing); 
-        // only 'Trigger 1' will be logged; 'Trigger 2' and 'Trigger 3' will not.
+// const test = (thing) => {
+//     // NOTE: recursive() will not fire unless it is called. 
+//     function recursive(y) {
+//         // NOTE: this recursive function has no break, and will fire infinitely if one of the triggers below is uncommented.
+//         console.log('Trigger 1');
+//         // recursive(thing); 
+//         // only 'Trigger 1' will be logged; 'Trigger 2' and 'Trigger 3' will not.
 
-        console.log('Trigger 2');
-        // recursive(thing); 
-        // 'Trigger 1' and 'Trigger 2' will be logged; 'Trigger 3' will not.
+//         console.log('Trigger 2');
+//         // recursive(thing); 
+//         // 'Trigger 1' and 'Trigger 2' will be logged; 'Trigger 3' will not.
 
-        console.log('Trigger 3');
+//         console.log('Trigger 3');
 
-        // NOTE: this 'return' will not prevent 'Trigger 4' from activating. Return will only exit the recursive() function.
-        // This 'return' will never be reached if any of the recursive() calls are uncommented.
-        return;
-    };
-    // At this point, recursive() will fire a second time.
-    // If this line is commented out, recursive() will not fire, even when test() is called.
-    recursive(thing);
-    console.log('Trigger 4');
-};
+//         // NOTE: this 'return' will not prevent 'Trigger 4' from activating. Return will only exit the recursive() function.
+//         // This 'return' will never be reached if any of the recursive() calls are uncommented.
+//         return;
+//     };
+//     // At this point, recursive() will fire a second time.
+//     // If this line is commented out, recursive() will not fire, even when test() is called.
+//     recursive(thing);
+//     console.log('Trigger 4');
+// };
 
-const thing = [1,2,3];
-test(thing);
+// const thing = [1,2,3];
+// test(thing);
 
 // Testing static on Classes
 // class ClassWithStaticMethod {
@@ -103,3 +103,26 @@ test(thing);
   // output: "static method has been called."
 
 // const test = new ClassWithStaticMethod();
+
+// recursive strategy for reversing a string
+function reverseString(str) {
+  // once str has been iterated through, the function will terminate by triggering this if statement
+  // if we are returning an empty string, how does this function produce anything? where is the reversed string even coming from?
+  if (str === "")
+    return "";
+  else
+    // console.log((str.substr(1)) + str.charAt(0)); is as follows, and then the function terminates
+    // elloh
+    // lloe
+    // lol
+    // ol
+    // o
+    // TODO: Where is the reversed string going? How does it get returned from the function?
+    return reverseString(str.substr(1)) + str.charAt(0);
+}
+reverseString("hello");
+// console.log(reverseString("hello"));
+
+// var str = "nice"
+// var news = (str.substr(1));
+// console.log(str);
