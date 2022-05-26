@@ -20,7 +20,12 @@
         }
     };
 
-    return Object.entries(numMap)
+   for (const number in numMap) {
+       if (Object.hasOwnProperty.call(numMap, number)) {
+        //    const number = numMap[number];
+           if (numMap[number] === 1) return Number(number);
+       }
+   }
 };
 
 const nums = [4,1,2,1,2];
