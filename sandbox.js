@@ -90,7 +90,7 @@
 //     static staticMethod() {
 //       return 'static method has been called.';
 //     }
-//     // TODO: Line below is the question; how exactly is it triggered? 
+//     // Line below is the question; how exactly is it triggered? 
 //     // ANSWER: it triggers every time sandbox.js is ran in the terminal. Hence 'initialization block called'
 //     static {
 //       console.log('Class static initialization block called');
@@ -105,24 +105,46 @@
 // const test = new ClassWithStaticMethod();
 
 // recursive strategy for reversing a string
-function reverseString(str) {
-  // once str has been iterated through, the function will terminate by triggering this if statement
-  // if we are returning an empty string, how does this function produce anything? where is the reversed string even coming from?
-  if (str === "")
-    return "";
-  else
-    // console.log((str.substr(1)) + str.charAt(0)); is as follows, and then the function terminates
-    // elloh
-    // lloe
-    // lol
-    // ol
-    // o
-    // TODO: Where is the reversed string going? How does it get returned from the function?
-    return reverseString(str.substr(1)) + str.charAt(0);
-}
-reverseString("hello");
+// function reverseString(str) {
+//   // once str has been iterated through, the function will terminate by triggering this if statement
+//   // if we are returning an empty string, how does this function produce anything? where is the reversed string even coming from?
+//   if (str === "")
+//     return "";
+//   else
+//     // console.log((str.substr(1)) + str.charAt(0)); is as follows, and then the function terminates
+//     // elloh
+//     // lloe
+//     // lol
+//     // ol
+//     // o
+//     // TODO: Where is the reversed string going? How does it get returned from the function?
+//     return reverseString(str.substr(1)) + str.charAt(0);
+// }
+// reverseString("hello");
 // console.log(reverseString("hello"));
 
 // var str = "nice"
 // var news = (str.substr(1));
 // console.log(str);
+
+// TODO: Bitwise operators?
+// '^' Returns a zero in each bit position for which the corresponding bits are the same. [Returns a one in each bit position for which the corresponding bits are different.]
+var singleNumber = function(nums) {
+  let result = 0
+
+  for (let n of nums) {
+    console.log(result ^ n);
+      result = result ^ n 
+  }
+  
+  return result
+};
+
+const nums = [4, 1, 2, 1, 2];
+// first loop: 0 ^ 4 === 4
+console.log(6^2);
+// second loop: 4 ^ 1 === 5
+// third loop: 5 ^ 2 === 7
+// fourth loop: 7 ^ 1 === 6
+// fifth loop: 6 ^ 2 === 4
+// singleNumber(nums);
