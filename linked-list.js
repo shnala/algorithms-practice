@@ -58,6 +58,9 @@ class LinkedList {
     add(element) {
         let node = this.head
         // while the NEXT node is not null, run this loop
+        if (node === null) {
+            node = element;
+        }
         while (node.next) {
             node = node.next;
         };
@@ -65,6 +68,10 @@ class LinkedList {
         // at this point the loop has ended and we are positioned at the end of the linked list, just before null. We will set node.next (which is currently null) to be the new Node(element)
         node.next = new Node(element);
     };
+
+    addMany(array) {
+        let node = this.head
+    }
 
     // method for removing a node from the end of the list
     //TODO: need catch for when 'val' doesn't exist
@@ -97,13 +104,13 @@ class LinkedList {
 
 };
 
-const nodeA = new Node(1);
-const nodeB = new Node(3);
-// point to the next node manually
-nodeA.next = nodeB;
+// const nodeA = new Node(1);
+// const nodeB = new Node(3);
+// // point to the next node manually
+// nodeA.next = nodeB;
 
 // IMPORTANT: nodeA becomes the head of the new LinkedList, 'list'. nodeA retains all the properties of the Node class, i.e. this.val and this.next
-let list = new LinkedList(nodeA);
+let list = new LinkedList();
 
 // logs the whole list, i.e.  Node { val: 1, next: Node { val: 3, next: null } }
 // console.log(list.head);

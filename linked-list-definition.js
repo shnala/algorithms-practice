@@ -20,6 +20,8 @@ class LinkedList {
         node.next = new Node(element);
     };
 
+
+
 }
 
 const list = new LinkedList();
