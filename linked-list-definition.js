@@ -1,4 +1,5 @@
 // linked list without comments, for leetcode problems
+// doesn't work
 class Node {
     constructor(val) {
         this.val = val;
